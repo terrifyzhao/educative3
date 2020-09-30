@@ -22,7 +22,7 @@ def reverse_alternate_k_elements(head, k):
         first_part_tail = pre
         second_part_head = cur
         while cur and i < k:
-            i+=1
+            i += 1
             next = cur.next
             cur.next = pre
             pre = cur
@@ -36,7 +36,7 @@ def reverse_alternate_k_elements(head, k):
         pre = second_part_head
         i = 0
         while cur and i < k:
-            i+=1
+            i += 1
             pre = cur
             cur = cur.next
     return head

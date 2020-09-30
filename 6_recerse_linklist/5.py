@@ -16,10 +16,11 @@ class Node:
 
 def rotate(head, rotations):
     cur = head
-    length = 0
-    while cur:
+    length = 1
+    while cur and cur.next:
         length += 1
         cur = cur.next
+    cur.next = head
 
     length = length - rotations % length
 
@@ -28,16 +29,15 @@ def rotate(head, rotations):
     i = 0
     while cur and i < length:
         i += 1
-        pre = cur
         cur = cur.next
     pre.next = None
 
     tmp_head = cur
 
-    while cur and cur.next:
-        cur = cur.next
-
-    cur.next = head
+    # while cur and cur.next:
+    #     cur = cur.next
+    #
+    # cur.next = head
 
     return tmp_head
 
