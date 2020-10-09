@@ -7,10 +7,29 @@ class ListNode:
         self.value = value
         self.next = None
 
+    def __lt__(self, other):
+        return self.value < other.value
+
 
 def merge_lists(lists):
     resultHead = None
-    # TODO: Write your code here
+
+    queue = []
+
+    for list in lists:
+        heappush(queue, list)
+
+    pre = None
+    while queue:
+        node = heappop(queue)
+        if pre:
+            pre.next = node
+        pre = node
+        if resultHead is None:
+            resultHead = node
+        if node.next:
+            heappush(queue, node.next)
+
     return resultHead
 
 
