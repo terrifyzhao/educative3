@@ -5,6 +5,7 @@ def quick_sort(arr):
 
 def sort(arr, start, end):
     left, right = start, end
+
     if left < right:
         pivot = arr[left]
         while left != right:
